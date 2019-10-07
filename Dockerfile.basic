@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch
+WORKDIR /app
+COPY . .
+RUN dotnet publish "TestApp/TestApp.csproj" -c Release -o /app
+ENTRYPOINT ["dotnet", "TestApp.dll"]

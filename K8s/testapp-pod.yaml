@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testapp
+  labels:
+    app: testapp
+spec:
+  containers:
+  - name: testapp
+    image: isonaj/testapp
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    beta.kubernetes.io/os: linux

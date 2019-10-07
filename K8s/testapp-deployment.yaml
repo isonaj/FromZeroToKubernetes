@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: testapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: testapp
+      labels:
+        app: testapp
+    spec:
+      containers:
+      - name: testapp
+        image: isonaj/testapp
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        beta.kubernetes.io/os: linux
